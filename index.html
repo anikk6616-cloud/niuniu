@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Membuat Siomay</title>
+
+  <!-- Font dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: white;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: pink;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: palevioletred;
+      border-bottom: 2px solid pink;
+      padding-bottom: 5px;
+    }
+
+    ul, ol {
+      line-height: 1.8;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: pink;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: palevioletred;
+      transform: scale(1.05);
+    }
+
+    /* Form pemesanan */
+    form {
+      margin-top: 25px;
+      background-color: #fff6f8;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid pink;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-family: "Poppins", sans-serif;
+    }
+
+    footer {
+      background-color: palevioletred;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        margin: 15px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Resep & Cara Membuat Siomay</h1>
+  </header>
+
+  <section>
+    <img src="somaiAnika.jpg" alt="Siomay Bandung">
+
+    <h2>Bahan-bahan:</h2>
+    <ul>
+      <li>250 gram daging ayam giling</li>
+      <li>100 gram ikan tenggiri giling</li>
+      <li>100 gram tepung tapioka</li>
+      <li>2 siung bawang putih halus</li>
+      <li>1 butir telur</li>
+      <li>Garam, gula, dan lada secukupnya</li>
+      <li>Kol, tahu, kentang, pare, dan telur rebus untuk pelengkap</li>
+    </ul>
+
+    <h2>Langkah-langkah:</h2>
+    <ol>
+      <li>Campur daging ayam, ikan, tepung tapioka, bawang putih, telur, dan bumbu hingga rata.</li>
+      <li>Bentuk adonan sesuai selera, bisa isi ke tahu atau pare.</li>
+      <li>Kukus selama 30–40 menit sampai matang.</li>
+      <li>Sajikan siomay dengan saus kacang dan kecap manis.</li>
+    </ol>
+
+    <h2>Tips:</h2>
+    <p>Gunakan ikan segar agar aroma siomay lebih lezat. Saus kacang bisa dibuat dari kacang tanah goreng, cabai, gula, dan air hangat.</p>
+
+    <button onclick="alert('Selamat mencoba membuat siomay! 😋')">Mulai Memasak</button>
+
+    <!-- Tambahan: Form Pemesanan -->
+    <h2>Ingin Membeli Siomay?</h2>
+    <p>Isi form di bawah ini untuk memesan siomay lezat buatan Anika 🍽️</p>
+
+    <form onsubmit="kirimPesanan(event)">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+      <label for="jumlah">Jumlah Porsi:</label>
+      <select id="jumlah" name="jumlah" required>
+        <option value="">-- Pilih Jumlah --</option>
+        <option value="1">1 Porsi</option>
+        <option value="2">2 Porsi</option>
+        <option value="5">5 Porsi</option>
+        <option value="10">10 Porsi</option>
+      </select>
+
+      <label for="kontak">Nomor WhatsApp:</label>
+      <input type="tel" id="kontak" name="kontak" placeholder="contoh: 081234567890" required>
+
+      <label for="alamat">Alamat Pengiriman:</label>
+      <textarea id="alamat" name="alamat" rows="3" placeholder="Tulis alamat lengkap Anda" required></textarea>
+
+      <button type="submit">Kirim Pesanan</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Resep Masakan Anika | Siomay Lezat & Sehat</p>
+  </footer>
+
+  <script>
+    function kirimPesanan(event) {
+      event.preventDefault(); // Mencegah reload halaman
+      const nama = document.getElementById("nama").value;
+      const jumlah = document.getElementById("jumlah").value;
+      const kontak = document.getElementById("kontak").value;
+
+      alert(`Terima kasih, ${nama}! 😊\nPesanan ${jumlah} porsi siomay Anda akan kami hubungi lewat WhatsApp: ${kontak}.`);
+    }
+  </script>
+</body>
+</html>
